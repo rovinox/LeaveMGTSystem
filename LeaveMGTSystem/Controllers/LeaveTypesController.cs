@@ -8,22 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using LeaveMGTSystem.Data;
 using LeaveMGTSystem.Models;
 using LeaveMGTSystem.Models.LeaveTypes;
+using AutoMapper;
 namespace LeaveMGTSystem.Controllers
 {
-    public class LeaveTypesController(ApplicationDbContext context) : Controller
+    // public class LeaveTypesController(ApplicationDbContext context, IMapper  mapper) : Controller
+    public class LeaveTypesController(ApplicationDbContext context, IMapper mapper) : Controller
     {
         private readonly ApplicationDbContext _context = context;
+        private readonly IMapper _mapper = mapper;
+
 
         // GET: LeaveTypes
         public async Task<IActionResult> Index()
         {
             var data = await _context.LeaveTypes.ToListAsync();
-            var viewData = data.Select(q => new IndexVM
-            {
-                Id = q.Id,
-                Name = q.Name,
-                NumberOfDays = q.NumberOfDays
-            });
+            var viewData = _mapper.Map<List<IndexVM>>(data);
             return View(viewData);
 
         }
