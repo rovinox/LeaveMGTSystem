@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaveMGTSystem.Models.LeaveTypes
 {
-    public class LeaveTypeReadOnlyVM 
+    public class LeaveTypeReadOnlyVM : BaseLeaveTypeVM
     {
           public string Name { get; set; } = string.Empty;
         
