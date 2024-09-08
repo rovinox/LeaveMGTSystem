@@ -10,6 +10,5 @@ namespace LeaveMGTSystem.Models
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int NumberOfDays { get; set; }
-        //public bool Enable { get; set; }
     }
 }

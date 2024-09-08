@@ -12,7 +12,9 @@ namespace LeaveMGTSystem.AutoMapperProfiles
     {
         public AutoMapperProfile()
         {
-            CreateMap<LeaveType, IndexVM>();
+            CreateMap<LeaveType, LeaveTypeReadOnlyVM>();
+            CreateMap<LeaveTypeCreateVM, LeaveType>();
+            CreateMap<LeaveTypeEditVM, LeaveType>().ReverseMap();
         }
     }
 }
