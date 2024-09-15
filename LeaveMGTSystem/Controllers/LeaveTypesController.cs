@@ -10,9 +10,12 @@ using LeaveMGTSystem.Models;
 using LeaveMGTSystem.Models.LeaveTypes;
 using AutoMapper;
 using LeaveMGTSystem.Services;
+using LeaveMGTSystem.Common;
+
 namespace LeaveMGTSystem.Controllers
 {
     // public class LeaveTypesController(ApplicationDbContext context, IMapper  mapper) : Controller
+    [Authorize(Roles =Roles.Administrator )]
     public class LeaveTypesController(ILeaveTypesService _leaveTypesService) : Controller
     {
         private const string NameExistsValidationMessage = "This leave type already exists in the database";
