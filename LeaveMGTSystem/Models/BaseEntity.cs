@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace LeaveMGTSystem.Models
 {
-    public class LeaveType
+    public abstract class BaseEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public int NumberOfDays { get; set; }
     }
 }
