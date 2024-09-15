@@ -44,14 +44,14 @@
             </div>
             @foreach(var role in Model.Input.RoleNames)
             {
-                <div class="form-check">
+                <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" asp-for="Input.RoleName" value="@role">
                     <label class="form-check-label" asp-for="Input.RoleName">
                         @role
                     </label>
                 </div>
             }
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 mt-3 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
@@ -88,4 +88,4 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-}
+        }
